@@ -68,6 +68,23 @@ This will yield:
         <div class="second-level">I'm down here!</div>
     </div>
 
+### Array Loops
+You can also pass an array to a tag function, which results in a loop with each member of the array passed to each iteration of the loop. Here's an example:
+
+    dom = new Dominator
+
+    dom
+        .div ['John', 'Danny', 'Anthony'], (user) ->
+            @div class:'user', user
+
+This results in:
+    
+    <div>
+        <div class="user">John</div>
+        <div class="user">Danny</div>
+        <div class="user">Anthony</div>
+    </div>
+
 # TODO
 
 - Implement prettified HTML output
